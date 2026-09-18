@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>MKT Visibility | AI Assistant Demo</title>
+<style>
+:root{--navy:#06243b;--green:#2b850f;--bg:#f4f8f4;--line:#dfe8e1;--text:#18303f}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
+.wrap{max-width:760px;margin:35px auto;padding:18px}.card{background:white;border:1px solid var(--line);border-radius:18px;box-shadow:0 14px 40px rgba(6,36,59,.10);overflow:hidden}
+.head{background:var(--navy);color:white;padding:24px}.head h1{margin:0 0 5px;font-size:25px}.head p{margin:0;color:#dce8ed}
+.chat{padding:22px;min-height:360px}.bubble{max-width:88%;padding:13px 15px;border-radius:14px;margin:10px 0;line-height:1.45}.bot{background:#edf6ea}.user{background:var(--navy);color:white;margin-left:auto}
+.options{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}.options button,.send{border:0;border-radius:8px;padding:11px 14px;font-weight:700;cursor:pointer}.options button{background:white;border:1px solid var(--green);color:var(--green)}.options button:hover,.send{background:var(--green);color:white}
+.form{display:none;padding:0 22px 22px}.form input,.form textarea{width:100%;padding:12px;margin:6px 0;border:1px solid #cbd8cf;border-radius:8px;font:inherit}.form textarea{min-height:90px}.note{font-size:12px;color:#667a84;margin-top:12px}.status{font-weight:700;color:var(--green);margin-top:12px}
+.badge{font-size:12px;font-weight:700;color:#49606b;margin-top:8px}
+</style>
+</head>
+<body><div class="wrap"><div class="card">
+<div class="head"><h1>MKT Visibility Business Assistant</h1><p>Tell us what is taking time away from running your business.</p><div class="badge">PROTOTYPE • AI connection coming next</div></div>
+<div class="chat" id="chat">
+<div class="bubble bot">Hi! I'm the MKT Visibility business assistant. I can help identify where MKT may be able to save you time or strengthen your digital presence. What would you like help with?</div>
+<div class="options" id="options">
+<button onclick="choose('Social media')">Social media</button><button onclick="choose('Website')">Website</button>
+<button onclick="choose('Google Business Profile')">Google presence</button><button onclick="choose('Photography or video')">Photography / video</button>
+<button onclick="choose('AI or automation')">AI / automation</button><button onclick="choose('Not sure')">I'm not sure</button>
+</div></div>
+<div class="form" id="form">
+<div class="bubble bot" id="followup"></div>
+<input id="name" placeholder="Your name"><input id="business" placeholder="Business name">
+<input id="email" type="email" placeholder="Email"><input id="phone" type="tel" placeholder="Phone (optional)">
+<textarea id="problem" placeholder="Tell us a little about what you need help with"></textarea>
+<button class="send" onclick="sendLead()">Send consultation request</button>
+<div class="note">This prototype does not send information to an AI service. Selecting Send opens an email to MKT Visibility for your review before sending.</div>
+<div class="status" id="status"></div>
+</div>
+</div></div>
+<script>
+let selected='';
+const prompts={
+'Social media':'We can help with planning, creating and maintaining consistent social content. Tell us what is hardest about keeping your social pages active.',
+'Website':'We can help keep website content, photos, services and business information current. What would you like to improve?',
+'Google Business Profile':'We can help review and maintain your Google business presence. What seems to need attention?',
+'Photography or video':'We can help create visual content that shows customers your business, people, products or services. What would you like photographed or filmed?',
+'AI or automation':'We are exploring practical AI and automation solutions for repetitive small-business tasks. What task takes too much time, happens repeatedly, or causes leads to be missed?',
+'Not sure':'That is completely fine. Tell us what is taking too much time, what is not working, or what you wish were easier. A member of MKT Visibility can review it with you.'
+};
+function choose(v){selected=v;document.getElementById('options').style.display='none';document.getElementById('chat').insertAdjacentHTML('beforeend','<div class="bubble user">'+v+'</div>');document.getElementById('followup').textContent=prompts[v];document.getElementById('form').style.display='block'}
+function sendLead(){const g=id=>document.getElementById(id).value.trim();if(!g('name')||!g('email')||!g('problem')){document.getElementById('status').textContent='Please add your name, email and what you need help with.';return}
+const subject='MKT Visibility Consultation - '+selected;const body='Name: '+g('name')+'\nBusiness: '+g('business')+'\nEmail: '+g('email')+'\nPhone: '+g('phone')+'\nInterest: '+selected+'\n\nWhat they need help with:\n'+g('problem');location.href='mailto:MKTvisibility@gmail.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body)}
+</script></body></html>
