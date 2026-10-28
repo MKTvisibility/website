@@ -1,3 +1,5 @@
+import {BLOG_ARTICLE_CSS,blogArticleHtml,blogPlainText} from './blog-content.mjs'
+const articleStyle=document.createElement('style');articleStyle.textContent=BLOG_ARTICLE_CSS;document.head.append(articleStyle)
 const API='https://gvmwkltwrlqwbqegieum.supabase.co'
 const KEY='sb_publishable_SFIrQ_kqkLQJdBNMnaRr3g_w6XWKaBJ'
 const headers={apikey:KEY,'Content-Type':'application/json'}
@@ -11,18 +13,16 @@ async function image(post){
  if(!post.image_path)return null
  try{const data=await request('/storage/v1/object/sign/mkt-blog-images/'+post.image_path.split('/').map(encodeURIComponent).join('/'),{method:'POST',body:JSON.stringify({expiresIn:300})});if(!data.signedURL)return null;const img=node('img');img.src=API+'/storage/v1'+data.signedURL;img.alt=post.image_alt||'';img.loading='lazy';return img}catch{return null}
 }
-async function card(post){const el=node('article',null,'blog-card');const pic=await image(post);if(pic){const a=link('',`?post=${encodeURIComponent(post.slug)}`);a.setAttribute('aria-label',post.title);a.append(pic);el.append(a)}const copy=node('div',null,'copy'),title=node('h2');title.append(link(post.title,`?post=${encodeURIComponent(post.slug)}`));copy.append(node('small',date(post.published_at)),title,node('p',post.excerpt),link('Read post →',`?post=${encodeURIComponent(post.slug)}`));el.append(copy);return el}
+async function card(post){const el=node('article',null,'blog-card');const pic=await image(post);if(pic){const a=link('',`?post=${encodeURIComponent(post.slug)}`);a.setAttribute('aria-label',post.title);a.append(pic);el.append(a)}const copy=node('div',null,'copy'),title=node('h2');title.append(link(post.title,`?post=${encodeURIComponent(post.slug)}`));copy.append(node('small',date(post.published_at)),title,node('p',(blogPlainText(post.body,document).slice(0,180)+(blogPlainText(post.body,document).length>180?'…':''))),link('Read post →',`?post=${encodeURIComponent(post.slug)}`));el.append(copy);return el}
 async function showPost(slug){
  const rows=await request('/rest/v1/cc_blog_public?select=*&slug=eq.'+encodeURIComponent(slug)+'&limit=1'),p=rows[0]
  document.querySelector('#blog-heading').hidden=true
  if(!p){status.replaceChildren(node('h1','Post not available'),node('p','This post may be unpublished or scheduled for a later date.'),link('← Back to all posts','blog.html'));return}
  status.hidden=true;article.hidden=false
- const title=node('h1',p.title),pic=await image(p)
- article.append(link('← All blog posts','blog.html'),title,node('p',`${p.author||'MKT Visibility'} · ${date(p.published_at)}`,'byline'))
- if(pic){const figure=node('figure');pic.loading='eager';figure.append(pic);if(p.image_caption)figure.append(node('figcaption',p.image_caption));article.append(figure)}
- if(p.excerpt)article.append(node('p',p.excerpt,'blog-intro'))
- article.append(node('div',p.body,'blog-body'))
- document.title=p.title+' | MKT Visibility Blog';document.querySelector('meta[name="description"]').content=p.excerpt||p.body.slice(0,160)
+ const pic=await image(p)
+ article.className='mkt-blog-article'
+ article.innerHTML=blogArticleHtml(p,document,{imageUrl:pic?.src||''})
+ document.title=p.title+' | MKT Visibility Blog';document.querySelector('meta[name="description"]').content=blogPlainText(p.body,document).slice(0,160)
  document.querySelector('link[rel="canonical"]').href='https://mktvisibility.github.io/website/blog.html?post='+encodeURIComponent(p.slug)
 }
 async function loadMore(){
