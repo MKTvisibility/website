@@ -28,7 +28,7 @@ async function showPost(slug){
 }
 async function loadMore(){
  more.disabled=true
- try{const rows=await request(`/rest/v1/cc_blog_public?select=*&order=published_at.desc,post_id.asc&limit=12&offset=${offset}`);const cards=await Promise.all(rows.map(card));posts.append(...cards);offset+=rows.length;more.hidden=rows.length<12;status.hidden=offset>0
+ try{const rows=await request(`/rest/v1/cc_blog_public?select=*&order=published_at.asc,post_id.asc&limit=12&offset=${offset}`);const cards=await Promise.all(rows.map(card));posts.append(...cards);offset+=rows.length;more.hidden=rows.length<12;status.hidden=offset>0
  if(!offset)status.replaceChildren(node('h2','Fresh ideas are on the way.'),node('p','Our first posts will appear here when they are published. Check back soon.'),link('Explore MKT Visibility services →','index.html#services'))
  }catch{showError()}finally{more.disabled=false}
 }
