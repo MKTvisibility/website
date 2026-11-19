@@ -25,7 +25,6 @@
 }
 
 .wolf-home .hero,
-.wolf-home .bar,
 .wolf-home #services,
 .wolf-home #why,
 .wolf-home .good-fit,
@@ -46,7 +45,22 @@
   -webkit-mask-image: linear-gradient(#000 92%, transparent);
   mask-image: linear-gradient(#000 92%, transparent);
 }
-.wolf-home .bar { padding-bottom: 19px; }
+.wolf-home .bar {
+  z-index: 1;
+  padding: 27px 0 8px;
+  background: var(--draft-navy);
+  color: #fff;
+  box-shadow: 0 5px 13px #051b2940;
+}
+.wolf-home .bar::before {
+  top: 4px;
+  width: 25px;
+  height: 20px;
+  background: #fff;
+  mix-blend-mode: normal;
+  -webkit-mask: url("assets/paw.webp") center / contain no-repeat;
+  mask: url("assets/paw.webp") center / contain no-repeat;
+}
 
 .wolf-home #service-options,
 .wolf-home #faq {
@@ -103,7 +117,7 @@
 
 .wolf-site .draft-footer {
   position: relative;
-  background: #051b29;
+  background: var(--draft-navy);
   color: #dceaf2;
   padding: 24px 0 18px;
   text-align: left;
@@ -223,6 +237,7 @@
 
 /* Match the About page's 40px rhythm between content groups. */
 .wolf-site {
+  --draft-navy: #051b29;
   --section-edge: 20px;
   --after-hero: 25px;
 }
