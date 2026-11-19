@@ -1,33 +1,21 @@
-:root{--ink:#e9f6f6;--teal:#79e2e4;--glass:rgba(5,29,40,.58)}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);font:16px/1.65 system-ui,Arial;background:#081b27 url('wolf-haven.jpg?v=20261119b') center top/cover fixed}body:before{content:"";position:fixed;inset:0;background:linear-gradient(100deg,rgba(3,18,28,.35),rgba(4,31,40,.12),rgba(3,16,27,.32));pointer-events:none}header,main,footer{position:relative}header{background:rgba(3,21,30,.60);backdrop-filter:blur(18px);border-bottom:1px solid #7cdadd55}.wrap{max-width:1200px;margin:auto;padding:0 24px}nav{display:flex;justify-content:space-between;align-items:center;gap:22px;padding:20px 0;flex-wrap:wrap}nav a{color:#ecffff;text-decoration:none}nav .brand{font:700 27px Georgia,serif;letter-spacing:2px}nav .links{display:flex;gap:20px;flex-wrap:wrap;font-size:14px}nav a:hover,a:focus-visible{color:var(--teal)}.hero{text-align:center;padding:105px 0 72px}.eyebrow{text-transform:uppercase;letter-spacing:4px;color:var(--teal);font-size:12px;font-weight:700}h1,h2,h3{font-family:Georgia,serif;line-height:1.15}h1{font-size:clamp(40px,6vw,76px);max-width:960px;margin:18px auto}h2{font-size:clamp(29px,4vw,44px)}.lead{font-size:19px;max-width:780px;margin:0 auto 26px;color:#e0eded}.btn{display:inline-block;border:1px solid #8be5e6;background:#07616a;color:white;padding:13px 24px;border-radius:11px;text-decoration:none;font-weight:700;box-shadow:0 0 22px #5de4e455;cursor:pointer}.btn:hover{background:#087d87}.btn.secondary{background:rgba(3,30,40,.7)}.actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card,.panel{background:var(--glass);border:1px solid #a6eded77;backdrop-filter:blur(14px);border-radius:18px;padding:27px;box-shadow:0 14px 35px #00121a66}.card h3{font-size:23px;margin:0 0 12px}.card p{color:#d9eeee}.card a{color:#a4f7f6}.section{padding:45px 0 75px}.section-title{text-align:center;margin-bottom:28px}.panel{max-width:860px;margin:auto}.muted{color:#d1e3e6}label{display:block;margin:15px 0 6px;font-weight:700}input,textarea,select{width:100%;padding:13px;background:#f3ffff;color:#092532;border:1px solid #a9dddd;border-radius:8px;font:inherit}textarea{min-height:140px}button{font:inherit}.notice{background:#092d3c;border-left:3px solid #80e6e8;padding:13px 17px;border-radius:5px}footer{padding:30px 0;background:#03121dcc;border-top:1px solid #8cdadd55}footer a{color:#a5ecec}.small{font-size:13px}.price{font-size:32px;color:#b5ffff;font-family:Georgia,serif}.hero.compact{padding:70px 0 40px}.hero.compact h1{font-size:clamp(38px,5vw,60px)}@media(max-width:800px){.grid{grid-template-columns:1fr}.hero{padding:65px 0 40px}nav{align-items:flex-start}nav .links{gap:11px}}
-/* Wolf Haven background: upload wolf-haven.jpg into this draft folder to activate. */
-.hero{min-height:440px;text-shadow:0 3px 14px #001522aa}.card,.panel{backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}@media(max-width:800px){body{background-attachment:scroll;background-position:65% top}}
-
-/* Responsive Wolf Haven treatment */
-body{background-color:#0a2639;background-image:linear-gradient(90deg,rgba(1,16,28,.24),rgba(1,16,28,.08)),url('wolf-haven.jpg?v=20261119b');background-position:center top;background-size:cover;background-repeat:no-repeat}body:before{background:linear-gradient(180deg,rgba(0,13,25,.18),rgba(0,13,25,.04) 45%,rgba(0,13,25,.24))}.card{background:rgba(3,27,39,.60)}.panel{background:rgba(3,27,39,.67)}@media(max-width:800px){body{background-image:none;background:#061e2c}body:before{display:none}main:before{content:"";position:absolute;inset:0 0 auto;height:1050px;background:linear-gradient(180deg,rgba(0,14,27,.12),rgba(0,14,27,.55)),url('wolf-haven.jpg?v=20261119b') 69% top/auto 850px no-repeat;pointer-events:none}main>*{position:relative}nav .brand{font-size:22px}nav .links{display:flex;overflow-x:auto;flex-wrap:nowrap;width:100%;padding-bottom:7px;gap:18px;scrollbar-width:thin}nav .links a{white-space:nowrap}.hero{min-height:360px;padding:50px 0 45px}h1{font-size:clamp(35px,10vw,56px)}.lead{font-size:16px}.wrap{padding:0 17px}.section{padding:25px 0 45px}.card,.panel{padding:21px}.grid{grid-template-columns:1fr}.actions{gap:10px}.btn{padding:11px 16px}}@media(min-width:801px) and (max-width:1100px){.grid{grid-template-columns:repeat(2,1fr)}}
-
-/* Alpine sunset palette, aligned to Wolf Haven */
-:root{--ink:#fff7e9;--teal:#f4cb91;--glass:rgba(13,31,48,.68)}
-header{background:rgba(11,30,48,.73);border-bottom:1px solid rgba(255,220,164,.45)}
-nav .brand{color:#fff3dc;text-shadow:0 2px 10px #07182a}
-nav a{color:#fff6e8}nav a:hover,nav a:focus-visible{color:#ffd48f}
-.eyebrow{color:#ffdaa0;text-shadow:0 2px 7px #061b30}
-.hero h1{color:#fff9f1;text-shadow:0 3px 16px rgba(3,17,29,.85);max-width:900px}
-.lead{color:#fff5e8;text-shadow:0 2px 12px rgba(3,17,29,.85)}
-.btn{background:#f2c987;color:#182d3b;border:1px solid #fff0cf;box-shadow:0 5px 18px #08182955;text-shadow:none}
-.btn:hover{background:#ffe0a9;color:#112938}
-.btn.secondary{background:rgba(14,37,55,.77);color:#fff8ec;border-color:#e9c78f}
-.card,.panel{background:rgba(13,33,50,.75);border:1px solid rgba(250,214,157,.67);box-shadow:0 12px 28px #07172770}
-.card h3,.panel h2,.panel h3{color:#ffe2ad}
-.card p,.panel p{color:#f4eee4}
-.card a,footer a{color:#ffe0a0;text-underline-offset:4px}
-.price{color:#ffe1a7}
-.notice{background:rgba(17,47,64,.85);border-left-color:#ffd69b}
-input,textarea,select{background:#fffaf0;border-color:#d4b98b;color:#172e3b}
-input:focus-visible,textarea:focus-visible,select:focus-visible,a:focus-visible,button:focus-visible{outline:3px solid #ffd18a;outline-offset:3px}
-.section{padding:42px 0 58px}
-.grid{align-items:stretch}
-.card{display:flex;flex-direction:column;min-height:205px}
-.card a{margin-top:auto;align-self:flex-start}
-footer{background:rgba(6,23,37,.9);border-top-color:#e4c48d88}
-@media(max-width:800px){.card{min-height:0}.hero{min-height:370px}.actions .btn{max-width:100%;text-align:center}nav .links{scrollbar-color:#f3d4a3 transparent}.panel{max-width:100%}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+* { box-sizing: border-box; }
+.wrap { width: min(100%, 1150px); margin: auto; padding: 0 clamp(16px, 5vw, 50px); }
+.hero { text-align: center; padding: clamp(40px, 6vw, 92px) 0; background: linear-gradient(#f0f8ffd9,#f4f9fd 97%),url("../wolf-theme/assets/ridges.webp") center / cover; }
+.hero h1 { font-size: clamp(2.1rem, 5vw, 4rem); margin: 9px auto 15px; max-width: 780px; }
+.lead { max-width: 65ch; margin: 0 auto 20px; }
+.section { padding: 25px 0 68px; }
+.section-title { text-align: center; }
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px; }
+.card, .panel { padding: clamp(17px, 3vw, 29px); border: 1px solid #cddfed; background: #fff; border-radius: 14px; box-shadow: 0 4px 14px #12365411; }
+.card h3 { margin: 0 0 8px; }
+.panel { max-width: 770px; margin: auto; }
+.actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+.notice { background: #ecf6ff; border-left: 3px solid #3d779f; padding: 12px; }
+label { display: block; margin: 14px 0 5px; font-weight: 700; }
+input, textarea, select { width: 100%; padding: 11px; border: 1px solid #7495ad; border-radius: 7px; font: inherit; color: #0a2149; }
+textarea { min-height: 140px; }
+form button { margin-top: 14px; }
+footer { padding: 25px 0; }
+.small { font-size: .85rem; }
+@media (max-width: 780px) { .grid { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+@media (max-width: 500px) { .grid { grid-template-columns: 1fr; } }
