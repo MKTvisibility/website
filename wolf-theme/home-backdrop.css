@@ -145,3 +145,52 @@
   .draft-footer-grid > :first-child { grid-column: 1 / -1; }
   .wolf-site .draft-footer a { padding-block: 5px; }
 }
+
+/* Share the homepage wolf framing across secondary draft pages. */
+.wolf-site main .draft-hero {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  align-items: center;
+  min-height: clamp(300px, 32vw, 420px);
+  padding-block: 40px;
+  overflow: hidden;
+  text-align: left;
+}
+.draft-hero-art, .draft-hero-art img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.draft-hero-art {
+  z-index: -1;
+  -webkit-mask-image: linear-gradient(#000 76%, transparent);
+  mask-image: linear-gradient(#000 76%, transparent);
+}
+.draft-hero-art img { display: block; object-fit: cover; object-position: right 9%; }
+.draft-hero-art::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg,#f6fbfff7 10%,#f6fbffef 31%,#f6fbff87 51%,transparent 70%);
+}
+.wolf-site main .draft-hero > .wrap {
+  width: min(100%, 1180px);
+  margin-inline: auto;
+  padding-inline: clamp(16px, 5vw, 54px);
+}
+.draft-hero > .wrap > :not(.pricing-mobile) { max-width: min(100%, 53%); margin-inline: 0; }
+.draft-hero h1 { font-size: clamp(2.25rem, 4vw, 3.6rem); margin: 6px 0 12px; }
+.draft-hero .actions, .draft-hero .price-nav { justify-content: flex-start; }
+.wolf-site:has(main > .draft-hero + .grid) > main { padding-top: 0; }
+.draft-ai-visual { margin-block: 18px 30px; }
+.draft-ai-visual .visual-card { max-width: 620px; margin-inline: auto; }
+@media (max-width: 700px) {
+  .wolf-site main .draft-hero { display: block; min-height: 0; padding-block: 0 25px; }
+  .draft-hero-art { position: relative; display: block; height: clamp(175px, 52vw, 300px); z-index: auto; }
+  .draft-hero-art img { object-position: right 32%; }
+  .draft-hero-art::after { display: none; }
+  .draft-hero > .wrap > :not(.pricing-mobile) { max-width: 100%; }
+  .draft-hero h1 { font-size: clamp(2rem, 8vw, 2.65rem); }
+}
