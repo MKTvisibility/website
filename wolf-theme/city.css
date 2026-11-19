@@ -2,7 +2,41 @@
 .wolf-city .city-hero-notes { padding-top: 20px; padding-bottom: 20px; }
 .wolf-city .hero-card { margin: 0; }
 .wolf-city .hero-card h2 { margin-top: 6px; }
-.wolf-city #faq .wrap { padding-right: 24px; }
+/* Fade the FAQ scene into the shared page backdrop at both edges. */
+.wolf-city main > #faq {
+  position: relative;
+  isolation: isolate;
+}
+.wolf-city main > #faq::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(90deg, #f5faffed, #f5faffb0 40%, transparent 66%),
+    url("assets/wolf-overlook.webp") right center / cover no-repeat;
+  mask-image: linear-gradient(transparent, #000 19%, #000 76%, transparent);
+}
+.wolf-city #faq > .wrap { padding-inline: clamp(16px, 5vw, 54px); }
+.wolf-city #faq .center,
+.wolf-city #faq .faq {
+  width: 100%;
+  max-width: 660px;
+  margin-inline: 0;
+}
+@media (min-width: 801px) {
+  .wolf-city #faq .center,
+  .wolf-city #faq .faq { width: 60%; }
+}
+@media (max-width: 800px) {
+  .wolf-city.wolf-site main > #faq { padding-block-start: clamp(150px, 32vw, 235px); }
+  .wolf-city main > #faq::before {
+    height: clamp(170px, 35vw, 260px);
+    background: url("assets/wolf-overlook.webp") right top / auto 100% no-repeat;
+  }
+  .wolf-city #faq .center,
+  .wolf-city #faq .faq { margin-inline: auto; }
+}
 .wolf-city .dark {
   background: #fff;
   border: 1px solid var(--line);
