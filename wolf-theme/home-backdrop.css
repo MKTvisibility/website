@@ -130,25 +130,23 @@
   background: var(--draft-navy);
   color: #dceaf2;
   padding: 24px 0 18px;
-  text-align: left;
+  text-align: center;
   border: 0;
 }
 .draft-footer-grid { display: grid; gap: 7px; }
-.draft-footer-grid > :first-child {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 0 14px;
-}
-.draft-footer-grid > :first-child p { margin: 0; }
+.draft-footer-grid > :first-child p { margin: 2px 0 0; }
 .wolf-site .draft-footer-links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: baseline;
-  gap: 0 8px;
+  display: grid;
+  gap: 0;
   height: auto;
   padding: 0;
+}
+.draft-footer-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+  gap: 0 8px;
 }
 .draft-footer-links a + a::before {
   content: "-";
