@@ -1,0 +1,86 @@
+/* A single stationary landscape under the scrolling homepage. */
+.wolf-home main {
+  position: relative;
+  isolation: isolate;
+}
+.wolf-home main::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, #f6fbffb8, #f6fbffe8 45%, #f6fbff8f),
+    url("assets/ridges.webp") center bottom / max(100%, 1360px) auto no-repeat,
+    linear-gradient(#daeefc, #f5faff);
+}
+
+.wolf-home .hero,
+.wolf-home .bar,
+.wolf-home #services,
+.wolf-home #why,
+.wolf-home .good-fit,
+.wolf-home #reviews,
+.wolf-home #contact,
+.wolf-home .blog-band,
+.wolf-home #service-options,
+.wolf-home #faq {
+  background: transparent;
+}
+
+.wolf-home .hero-art {
+  -webkit-mask-image: linear-gradient(#000 78%, transparent);
+  mask-image: linear-gradient(#000 78%, transparent);
+}
+.wolf-home .hero::after {
+  background: linear-gradient(90deg,#f6fbfff5,#f6fbfff0 27%,#f6fbff60 49%,transparent 68%);
+  -webkit-mask-image: linear-gradient(#000 78%, transparent);
+  mask-image: linear-gradient(#000 78%, transparent);
+}
+.wolf-home .bar { padding-bottom: 19px; }
+
+.wolf-home #service-options,
+.wolf-home #faq {
+  position: relative;
+  isolation: isolate;
+}
+.wolf-home #service-options::before,
+.wolf-home #faq::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: var(--overlook-scene) var(--overlook-position) / cover no-repeat;
+  -webkit-mask-image: linear-gradient(transparent, #000 19%, #000 76%, transparent);
+  mask-image: linear-gradient(transparent, #000 19%, #000 76%, transparent);
+}
+.wolf-home #service-options {
+  --overlook-scene: url("assets/wolves-overlook.webp");
+  --overlook-position: left center;
+}
+.wolf-home #faq {
+  --overlook-scene: linear-gradient(90deg,#f5faffee,#f5faffb0 40%,transparent 66%), url("assets/wolf-overlook.webp");
+  --overlook-position: right center;
+}
+.wolf-home #contact {
+  background: linear-gradient(transparent,#e4f2eae8 25%,#e4f2eae8 76%,transparent);
+}
+.wolf-home .blog-band { padding-bottom: 28px; }
+
+@media (max-width: 700px) {
+  .wolf-home main::before {
+    background-size: auto, 1050px auto, auto;
+  }
+  .wolf-home .hero-art::after { display: none; }
+  .wolf-home #faq {
+    --overlook-scene: url("assets/wolf-overlook.webp");
+    --overlook-position: right top;
+  }
+  .wolf-home #service-options { --overlook-position: left top; }
+  .wolf-home #service-options::before,
+  .wolf-home #faq::before {
+    height: clamp(160px, 35vw, 260px);
+    background-size: auto 100%;
+  }
+}
