@@ -20,3 +20,10 @@ if (menu && links) {
     }
   });
 }
+
+document.addEventListener('click', (event) => {
+  const link = event.target.closest('a[href]');
+  if (link && link.origin === location.origin && link.pathname === '/visibility-check.html') {
+    window.gtag?.('event', 'visibility_check_click');
+  }
+});
