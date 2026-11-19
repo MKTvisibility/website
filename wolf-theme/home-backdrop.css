@@ -201,3 +201,9 @@
 @media (max-width: 700px) {
   .wolf-home .hero-art { height: clamp(218px, 69vw, 460px); }
 }
+
+.wolf-home #why .dark {
+  background: #fff;
+  border: 1px solid var(--line);
+  box-shadow: 0 14px 36px #06243b10;
+}
