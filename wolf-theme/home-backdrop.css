@@ -145,29 +145,3 @@
   .draft-footer-grid > :first-child { grid-column: 1 / -1; }
   .wolf-site .draft-footer a { padding-block: 5px; }
 }
-
-/* Keep the footer artwork fully inside the navy area and clear of the copy. */
-.draft-footer > .wolf-wrap {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(200px, 32%);
-  column-gap: 20px;
-  align-items: end;
-}
-.draft-footer-grid { grid-column: 1 / -1; }
-.draft-footer > .wolf-wrap::after {
-  content: "";
-  grid-column: 2;
-  justify-self: end;
-  width: 100%;
-  max-width: 375px;
-  aspect-ratio: 750 / 165;
-  margin-top: 12px;
-  background: url("assets/footer-ridge.webp") center / contain no-repeat;
-}
-@media (max-width: 620px) {
-  .draft-footer > .wolf-wrap { grid-template-columns: minmax(0, 1fr); }
-  .draft-footer > .wolf-wrap::after {
-    grid-column: 1;
-    width: min(78%, 270px);
-  }
-}
