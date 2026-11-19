@@ -4,3 +4,30 @@
 
 /* Responsive Wolf Haven treatment */
 body{background-color:#0a2639;background-image:linear-gradient(90deg,rgba(1,16,28,.24),rgba(1,16,28,.08)),url('wolf-haven.jpg?v=20261119b');background-position:center top;background-size:cover;background-repeat:no-repeat}body:before{background:linear-gradient(180deg,rgba(0,13,25,.18),rgba(0,13,25,.04) 45%,rgba(0,13,25,.24))}.card{background:rgba(3,27,39,.60)}.panel{background:rgba(3,27,39,.67)}@media(max-width:800px){body{background-image:none;background:#061e2c}body:before{display:none}main:before{content:"";position:absolute;inset:0 0 auto;height:1050px;background:linear-gradient(180deg,rgba(0,14,27,.12),rgba(0,14,27,.55)),url('wolf-haven.jpg?v=20261119b') 69% top/auto 850px no-repeat;pointer-events:none}main>*{position:relative}nav .brand{font-size:22px}nav .links{display:flex;overflow-x:auto;flex-wrap:nowrap;width:100%;padding-bottom:7px;gap:18px;scrollbar-width:thin}nav .links a{white-space:nowrap}.hero{min-height:360px;padding:50px 0 45px}h1{font-size:clamp(35px,10vw,56px)}.lead{font-size:16px}.wrap{padding:0 17px}.section{padding:25px 0 45px}.card,.panel{padding:21px}.grid{grid-template-columns:1fr}.actions{gap:10px}.btn{padding:11px 16px}}@media(min-width:801px) and (max-width:1100px){.grid{grid-template-columns:repeat(2,1fr)}}
+
+/* Alpine sunset palette, aligned to Wolf Haven */
+:root{--ink:#fff7e9;--teal:#f4cb91;--glass:rgba(13,31,48,.68)}
+header{background:rgba(11,30,48,.73);border-bottom:1px solid rgba(255,220,164,.45)}
+nav .brand{color:#fff3dc;text-shadow:0 2px 10px #07182a}
+nav a{color:#fff6e8}nav a:hover,nav a:focus-visible{color:#ffd48f}
+.eyebrow{color:#ffdaa0;text-shadow:0 2px 7px #061b30}
+.hero h1{color:#fff9f1;text-shadow:0 3px 16px rgba(3,17,29,.85);max-width:900px}
+.lead{color:#fff5e8;text-shadow:0 2px 12px rgba(3,17,29,.85)}
+.btn{background:#f2c987;color:#182d3b;border:1px solid #fff0cf;box-shadow:0 5px 18px #08182955;text-shadow:none}
+.btn:hover{background:#ffe0a9;color:#112938}
+.btn.secondary{background:rgba(14,37,55,.77);color:#fff8ec;border-color:#e9c78f}
+.card,.panel{background:rgba(13,33,50,.75);border:1px solid rgba(250,214,157,.67);box-shadow:0 12px 28px #07172770}
+.card h3,.panel h2,.panel h3{color:#ffe2ad}
+.card p,.panel p{color:#f4eee4}
+.card a,footer a{color:#ffe0a0;text-underline-offset:4px}
+.price{color:#ffe1a7}
+.notice{background:rgba(17,47,64,.85);border-left-color:#ffd69b}
+input,textarea,select{background:#fffaf0;border-color:#d4b98b;color:#172e3b}
+input:focus-visible,textarea:focus-visible,select:focus-visible,a:focus-visible,button:focus-visible{outline:3px solid #ffd18a;outline-offset:3px}
+.section{padding:42px 0 58px}
+.grid{align-items:stretch}
+.card{display:flex;flex-direction:column;min-height:205px}
+.card a{margin-top:auto;align-self:flex-start}
+footer{background:rgba(6,23,37,.9);border-top-color:#e4c48d88}
+@media(max-width:800px){.card{min-height:0}.hero{min-height:370px}.actions .btn{max-width:100%;text-align:center}nav .links{scrollbar-color:#f3d4a3 transparent}.panel{max-width:100%}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
