@@ -49,6 +49,7 @@
   position: relative;
   z-index: 1;
   margin-top: calc(-1 * var(--hero-strip-overlap));
+  margin-bottom: clamp(12px, 1.7vw, 22px);
   padding: 9px 0;
   background: var(--draft-navy);
   color: #fff;
@@ -262,7 +263,7 @@
 /* Match the About page's 40px rhythm between content groups. */
 .wolf-site {
   --draft-navy: #051b29;
-  --hero-strip-overlap: clamp(18px, calc(13vw - 74px), 96px);
+  --hero-strip-overlap: clamp(18px, calc(13vw - 84px), 86px);
   --section-edge: 20px;
   --after-hero: 25px;
 }
@@ -334,9 +335,9 @@
 
 @media (min-width: 701px) {
   .wolf-site main > :is(.hero, .draft-hero) {
-    padding-bottom: max(40px, calc(var(--hero-strip-overlap) + 12px));
+    padding-bottom: max(40px, calc(var(--hero-strip-overlap) + 22px));
   }
 }
 @media (max-width: 700px) {
-  .wolf-site { --hero-strip-overlap: 8px; }
+  .wolf-site { --hero-strip-overlap: 4px; }
 }
