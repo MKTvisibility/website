@@ -283,3 +283,9 @@
 @media (max-width: 740px) {
   .wolf-home .home-review-grid { grid-template-columns: minmax(0, 1fr); }
 }
+
+.wolf-home #faq .home-section-card { container-type: inline-size; }
+.wolf-home #faq h2 { font-size: clamp(1.5rem, 5cqi, 2rem); }
+@media (min-width: 850px) {
+  .wolf-home #faq h2 { font-size: min(2rem, 5cqi); white-space: nowrap; }
+}
