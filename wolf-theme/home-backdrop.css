@@ -208,7 +208,8 @@
 }
 
 .wolf-home #why .dark,
-.wolf-home #contact .wrap {
+.wolf-home #contact .wrap,
+.wolf-home .home-section-card {
   background: #fff;
   border: 1px solid var(--line);
   box-shadow: 0 14px 36px #06243b10;
@@ -251,3 +252,15 @@
     padding-block-start: clamp(140px, 32vw, 235px);
   }
 }
+
+.wolf-home .home-section-card {
+  padding: clamp(18px, 3vw, 34px);
+  border-radius: 15px;
+}
+.wolf-home #reviews .review-card,
+.wolf-home #faq .faq {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+.wolf-home #faq .faq { padding-inline: 0; }
