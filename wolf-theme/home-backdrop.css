@@ -269,7 +269,7 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   column-gap: clamp(24px, 4vw, 46px);
-  row-gap: 16px;
+  row-gap: 24px;
 }
 .wolf-home .home-review-grid .home-section-card {
   display: flex;
@@ -279,8 +279,7 @@
 }
 .wolf-home .home-review-grid .review-card { margin: 0; padding: 0; }
 .wolf-home .home-review-grid .review-card::after { display: none; }
-.wolf-home .home-review-grid > .actions { grid-column: 2; margin: 0; }
+.wolf-home .home-review-grid .actions { padding-top: 16px; margin-top: auto; }
 @media (max-width: 740px) {
   .wolf-home .home-review-grid { grid-template-columns: minmax(0, 1fr); }
-  .wolf-home .home-review-grid > .actions { grid-column: 1; }
 }
