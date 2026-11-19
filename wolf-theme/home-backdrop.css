@@ -45,7 +45,8 @@
   -webkit-mask-image: linear-gradient(#000 92%, transparent);
   mask-image: linear-gradient(#000 92%, transparent);
 }
-.wolf-home .bar {
+.wolf-site .bar {
+  position: relative;
   z-index: 1;
   margin-top: -18px;
   padding: 9px 0;
@@ -53,15 +54,25 @@
   color: #fff;
   box-shadow: 0 5px 13px #051b2940;
 }
-.wolf-home .bar::before { content: none; }
-.wolf-home .bar .wrap { align-items: center; }
-.wolf-home .bar-pair {
+.wolf-site .bar::before { content: none; }
+.wolf-site .bar .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  width: min(100%, 1180px);
+  margin-inline: auto;
+  padding: 0 clamp(16px, 5vw, 54px);
+  gap: 4px 12px;
+}
+.wolf-site .bar span { font-size: .8rem; font-weight: 760; text-align: center; }
+.wolf-site .bar-pair {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: clamp(8px, 1vw, 15px);
 }
-.wolf-home .bar-paw {
+.wolf-site .bar-paw {
   flex: 0 0 23px;
   height: 19px;
   background: #fff;
@@ -69,7 +80,7 @@
   mask: url("assets/paw.webp") center / contain no-repeat;
 }
 @media (max-width: 700px) {
-  .wolf-home .bar { margin-top: -8px; }
+  .wolf-site .bar { margin-top: -8px; }
 }
 
 .wolf-home #service-options,
@@ -218,7 +229,7 @@
 .draft-hero > .wrap > :not(.pricing-mobile) { max-width: min(100%, 53%); margin-inline: 0; }
 .draft-hero h1 { font-size: clamp(2.25rem, 4vw, 3.6rem); margin: 6px 0 12px; }
 .draft-hero .actions, .draft-hero .price-nav { justify-content: flex-start; }
-.wolf-site:has(main > .draft-hero + .grid) > main { padding-top: 0; }
+.wolf-site:has(main > .draft-hero + .bar + .grid) > main { padding-top: 0; }
 .draft-ai-visual { margin-block: 18px 30px; }
 .draft-ai-visual .visual-card { max-width: 620px; margin-inline: auto; }
 @media (max-width: 700px) {
@@ -260,7 +271,7 @@
 .wolf-site:not(:has(.about-hero)) main > section:not(.hero, .draft-hero) {
   padding-block: var(--section-edge);
 }
-.wolf-site main > .draft-hero + section:not(.hero, .draft-hero) {
+.wolf-site main > .draft-hero + .bar + section:not(.hero, .draft-hero) {
   padding-block-start: var(--after-hero);
 }
 .wolf-site main > .inquiry-form {
@@ -269,13 +280,13 @@
 .wolf-site main > .wrap > .blog-grid {
   padding-block: var(--after-hero) var(--section-edge);
 }
-.wolf-site:has(main > .draft-hero + .grid) > main {
+.wolf-site:has(main > .draft-hero + .bar + .grid) > main {
   padding-block-end: var(--section-edge);
 }
-.wolf-site:has(main > .draft-hero + .grid) main > .grid {
+.wolf-site:has(main > .draft-hero + .bar + .grid) main > .grid {
   margin-block-start: var(--after-hero);
 }
-.wolf-site:has(main > .draft-hero + .grid) > :is(.steps, .cta) {
+.wolf-site:has(main > .draft-hero + .bar + .grid) > :is(.steps, .cta) {
   padding-block: var(--section-edge);
 }
 @media (max-width: 700px) {
