@@ -105,14 +105,22 @@
   position: relative;
   background: #051b29;
   color: #dceaf2;
-  padding: clamp(30px, 3.4vw, 48px) 0 28px;
+  padding: 24px 0 18px;
   text-align: left;
   border: 0;
 }
 .draft-footer-grid {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr;
-  gap: 24px 36px;
+  grid-template-columns: minmax(205px, .95fr) minmax(0, 3fr);
+  gap: 8px 30px;
+}
+.draft-footer-grid > :first-child { grid-row: span 2; }
+.draft-footer-grid > :first-child p { margin: 4px 0 0; }
+.draft-footer-grid > :not(:first-child) {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 2px 16px;
 }
 .draft-footer-brand {
   color: #fff;
@@ -121,26 +129,26 @@
   letter-spacing: .025em;
 }
 .draft-footer-brand span { color: #78c85e; }
-.draft-footer-grid strong { display: block; color: #fff; margin-bottom: 5px; }
+.draft-footer-grid strong { color: #fff; flex-basis: 100%; font-size: .875rem; }
 .wolf-site .draft-footer a {
   display: block;
   width: fit-content;
-  margin: 3px 0;
-  padding: 2px 0;
+  margin: 0;
+  padding: 4px 0;
   color: #e5f0f7;
   text-decoration: none;
 }
 .wolf-site .draft-footer a:hover { text-decoration: underline; text-underline-offset: 4px; }
 .draft-footer-legal {
-  margin: 27px 0 0;
+  margin: 14px 0 0;
   border-top: 1px solid #ffffff29;
-  padding-top: 15px;
+  padding-top: 10px;
   font-size: .8rem;
 }
 @media (max-width: 620px) {
-  .draft-footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
-  .draft-footer-grid > :first-child { grid-column: 1 / -1; }
-  .wolf-site .draft-footer a { padding-block: 5px; }
+  .draft-footer-grid { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .draft-footer-grid > :first-child { grid-row: auto; }
+  .wolf-site .draft-footer a { padding-block: 7px; }
 }
 
 /* Share the homepage wolf framing across secondary draft pages. */
