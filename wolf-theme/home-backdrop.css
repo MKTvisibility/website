@@ -274,7 +274,7 @@
 .wolf-home .home-review-grid .home-section-card {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 .wolf-home .home-review-grid .review-card { margin: 0; padding: 0; }
