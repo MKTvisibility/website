@@ -9,10 +9,19 @@
   inset: 0;
   z-index: -3;
   pointer-events: none;
-  background:
-    linear-gradient(180deg, #f6fbffb8, #f6fbffe8 45%, #f6fbff8f),
-    url("assets/ridges.webp") center bottom / max(100%, 1360px) auto no-repeat,
-    linear-gradient(#daeefc, #f5faff);
+  background: linear-gradient(#eaf5fd, #f5faff);
+}
+.wolf-home main::after {
+  content: "";
+  position: fixed;
+  inset: auto 0 0;
+  height: clamp(300px, 22vw, 560px);
+  z-index: -2;
+  pointer-events: none;
+  background: url("assets/ridges.webp") center bottom / max(100%, 1360px) auto no-repeat;
+  opacity: .46;
+  -webkit-mask-image: linear-gradient(transparent, #000 55%);
+  mask-image: linear-gradient(transparent, #000 55%);
 }
 
 .wolf-home .hero,
@@ -69,8 +78,9 @@
 .wolf-home .blog-band { padding-bottom: 28px; }
 
 @media (max-width: 700px) {
-  .wolf-home main::before {
-    background-size: auto, 1050px auto, auto;
+  .wolf-home main::after {
+    height: 230px;
+    background-size: 1050px auto;
   }
   .wolf-home .hero-art::after { display: none; }
   .wolf-home #faq {
