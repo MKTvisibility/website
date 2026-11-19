@@ -1,6 +1,6 @@
 * { box-sizing: border-box; }
 .wrap { width: min(100%, 1150px); margin: auto; padding: 0 clamp(16px, 5vw, 50px); }
-.hero { text-align: center; padding: clamp(40px, 6vw, 92px) 0; background: linear-gradient(#f0f8ffd9,#f4f9fd 97%),url("../wolf-theme/assets/ridges.webp") center / cover; }
+.hero { text-align: center; padding: clamp(40px, 6vw, 92px) 0; background: linear-gradient(#f0f8ffd9,#f4f9fd 97%),url("assets/ridges.webp") center / cover; }
 .hero h1 { font-size: clamp(2.1rem, 5vw, 4rem); margin: 9px auto 15px; max-width: 780px; }
 .lead { max-width: 65ch; margin: 0 auto 20px; }
 .section { padding: 25px 0 68px; }

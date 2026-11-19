@@ -1,0 +1,14 @@
+.wolf-city main > section:not(.hero) { background: transparent; }
+.wolf-city .city-hero-notes { padding-top: 20px; padding-bottom: 20px; }
+.wolf-city .hero-card { margin: 0; }
+.wolf-city .hero-card h2 { margin-top: 6px; }
+.wolf-city #faq .wrap { padding-right: 24px; }
+.wolf-city .dark {
+  background: #fff;
+  border: 1px solid var(--line);
+  color: var(--text);
+  box-shadow: 0 14px 36px #06243b10;
+}
+.wolf-city .dark h2 { color: var(--navy); }
+.wolf-city .dark .eyebrow { color: var(--green) !important; }
+.wolf-city .service-art { margin-left: 0; }

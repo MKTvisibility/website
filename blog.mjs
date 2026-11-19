@@ -1,6 +1,5 @@
-import {BLOG_ARTICLE_CSS,BLOG_HEADER_CSS,BLOG_HEADER_HTML,blogArticleHtml,blogPlainText} from './blog-content.mjs'
-const articleStyle=document.createElement('style');articleStyle.textContent=BLOG_HEADER_CSS+BLOG_ARTICLE_CSS;document.head.append(articleStyle)
-document.querySelector('header').outerHTML=BLOG_HEADER_HTML
+import {BLOG_ARTICLE_CSS,blogArticleHtml,blogPlainText} from './blog-content.mjs'
+const articleStyle=document.createElement('style');articleStyle.textContent=BLOG_ARTICLE_CSS;document.head.append(articleStyle)
 const API='https://gvmwkltwrlqwbqegieum.supabase.co'
 const KEY='sb_publishable_SFIrQ_kqkLQJdBNMnaRr3g_w6XWKaBJ'
 const headers={apikey:KEY,'Content-Type':'application/json'}
@@ -23,8 +22,9 @@ async function showPost(slug){
  const pic=await image(p)
  article.className='mkt-blog-article'
  article.innerHTML=blogArticleHtml(p,document,{imageUrl:pic?.src||''})
+ article.querySelector('a').href='blog.html'
  document.title=p.title+' | MKT Visibility Blog';document.querySelector('meta[name="description"]').content=blogPlainText(p.body,document).slice(0,160)
- document.querySelector('link[rel="canonical"]').href='https://mktvisibility.github.io/website/blog.html?post='+encodeURIComponent(p.slug)
+ document.querySelector('link[rel="canonical"]').href='https://mktvisibility.com/blog.html?post='+encodeURIComponent(p.slug)
 }
 async function loadMore(){
  more.disabled=true
