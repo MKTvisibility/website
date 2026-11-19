@@ -1,9 +1,9 @@
-/* A single stationary landscape under the scrolling homepage. */
-.wolf-home main {
+/* A single stationary landscape under the scrolling draft content. */
+.wolf-site > main {
   position: relative;
   isolation: isolate;
 }
-.wolf-home main::before {
+.wolf-site > main::before {
   content: "";
   position: fixed;
   inset: 0;
@@ -11,7 +11,7 @@
   pointer-events: none;
   background: linear-gradient(#eaf5fd, #f5faff);
 }
-.wolf-home main::after {
+.wolf-site > main::after {
   content: "";
   position: fixed;
   inset: auto 0 0;
@@ -78,7 +78,7 @@
 .wolf-home .blog-band { padding-bottom: 28px; }
 
 @media (max-width: 700px) {
-  .wolf-home main::after {
+  .wolf-site > main::after {
     height: 230px;
     background-size: 1050px auto;
   }
@@ -93,4 +93,55 @@
     height: clamp(160px, 35vw, 260px);
     background-size: auto 100%;
   }
+}
+
+/* Secondary pages share the landscape while their cards retain readable surfaces. */
+.wolf-site:not(.wolf-home) > main,
+.wolf-site:not(.wolf-home) main .hero,
+.wolf-site:not(.wolf-home) main .pricing-hero,
+.wolf-site:not(.wolf-home) main .inquiry-hero,
+.wolf-site:not(.wolf-home) main .soft {
+  background: transparent;
+}
+
+.wolf-site .draft-footer {
+  position: relative;
+  background: #051b29;
+  color: #dceaf2;
+  padding: clamp(30px, 3.4vw, 48px) 0 28px;
+  text-align: left;
+  border: 0;
+}
+.draft-footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 24px 36px;
+}
+.draft-footer-brand {
+  color: #fff;
+  font-size: clamp(1.35rem, 2.1vw, 1.8rem);
+  font-weight: 900;
+  letter-spacing: .025em;
+}
+.draft-footer-brand span { color: #78c85e; }
+.draft-footer-grid strong { display: block; color: #fff; margin-bottom: 5px; }
+.wolf-site .draft-footer a {
+  display: block;
+  width: fit-content;
+  margin: 3px 0;
+  padding: 2px 0;
+  color: #e5f0f7;
+  text-decoration: none;
+}
+.wolf-site .draft-footer a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.draft-footer-legal {
+  margin: 27px 0 0;
+  border-top: 1px solid #ffffff29;
+  padding-top: 15px;
+  font-size: .8rem;
+}
+@media (max-width: 620px) {
+  .draft-footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+  .draft-footer-grid > :first-child { grid-column: 1 / -1; }
+  .wolf-site .draft-footer a { padding-block: 5px; }
 }
