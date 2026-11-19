@@ -72,9 +72,6 @@
   --overlook-scene: linear-gradient(90deg,#f5faffee,#f5faffb0 40%,transparent 66%), url("assets/wolf-overlook.webp");
   --overlook-position: right center;
 }
-.wolf-home #contact {
-  background: linear-gradient(transparent,#e4f2eae8 25%,#e4f2eae8 76%,transparent);
-}
 .wolf-home .blog-band { padding-bottom: 28px; }
 
 @media (max-width: 700px) {
@@ -202,8 +199,15 @@
   .wolf-home .hero-art { height: clamp(218px, 69vw, 460px); }
 }
 
-.wolf-home #why .dark {
+.wolf-home #why .dark,
+.wolf-home #contact .wrap {
   background: #fff;
   border: 1px solid var(--line);
   box-shadow: 0 14px 36px #06243b10;
+}
+
+.wolf-home #contact .wrap {
+  width: min(calc(100% - 2 * clamp(16px, 5vw, 54px)), 1072px);
+  padding: clamp(18px, 3vw, 34px);
+  border-radius: 15px;
 }
