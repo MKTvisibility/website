@@ -27,7 +27,7 @@
   position: sticky;
   top: 0;
   z-index: 20;
-  background: #f7fbffef;
+  background: #fff;
   border-bottom: 1px solid #cfe2ef;
   padding: 0;
   color: var(--navy);
