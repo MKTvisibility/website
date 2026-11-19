@@ -211,3 +211,35 @@
   padding: clamp(18px, 3vw, 34px);
   border-radius: 15px;
 }
+
+/* Match the About page's 40px rhythm between content groups. */
+.wolf-site {
+  --section-edge: 20px;
+  --after-hero: 25px;
+}
+.wolf-site:not(:has(.about-hero)) main > section:not(.hero, .draft-hero) {
+  padding-block: var(--section-edge);
+}
+.wolf-site main > .draft-hero + section:not(.hero, .draft-hero) {
+  padding-block-start: var(--after-hero);
+}
+.wolf-site main > .inquiry-form {
+  padding-block: var(--after-hero) calc(2 * var(--section-edge));
+}
+.wolf-site main > .wrap > .blog-grid {
+  padding-block: var(--after-hero) var(--section-edge);
+}
+.wolf-site:has(main > .draft-hero + .grid) > main {
+  padding-block-end: var(--section-edge);
+}
+.wolf-site:has(main > .draft-hero + .grid) main > .grid {
+  margin-block-start: var(--after-hero);
+}
+.wolf-site:has(main > .draft-hero + .grid) > :is(.steps, .cta) {
+  padding-block: var(--section-edge);
+}
+@media (max-width: 700px) {
+  .wolf-home main > :is(#service-options, #faq) {
+    padding-block-start: clamp(140px, 32vw, 235px);
+  }
+}
