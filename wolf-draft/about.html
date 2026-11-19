@@ -2,6 +2,14 @@
 <link rel="stylesheet" href="../wolf-theme/theme.css?v=alpine-wolf-1">
 <script defer src="../wolf-theme/navigation.js"></script>
 <link rel="stylesheet" href="../wolf-theme/home-backdrop.css?v=7">
+<style>
+.about-team { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); gap: clamp(16px, 3vw, 30px); align-items: center; }
+.about-team img { display: block; width: 100%; height: auto; border-radius: 10px; }
+.about-team h2 { margin-top: 0; }
+@media (max-width: 700px) {
+  .about-team { grid-template-columns: minmax(0, 1fr); }
+}
+</style>
 </head><body class="wolf-site wolf-subpage"><header class="wolf-header">
   <a class="skip-link" href="#top">Skip to content</a>
   <nav class="wolf-wrap" aria-label="Main navigation">
@@ -20,7 +28,7 @@
 </header><main id="top"><section class="hero compact draft-hero"><picture class="draft-hero-art">
   <source media="(max-width: 700px)" srcset="../wolf-theme/assets/hero-mobile.webp">
   <img src="../wolf-theme/assets/hero.webp" alt="" width="1672" height="941" fetchpriority="high">
-</picture><div class="wrap"><div class="eyebrow">Strategy • Content • Visibility</div><h1>A Small-Business Partner</h1><p class="lead">Real people, thoughtful strategy, and consistent execution.</p><div class="actions"><a class="btn" href="visibility-check.html">Explore Visibility Check</a><a class="btn secondary" href="contact.html">Contact MKT Visibility</a></div></div></section><section class="section"><div class="wrap panel"><h2>Why MKT Visibility?</h2><p>We believe small businesses deserve professional digital support without needing a full in-house marketing department. Our focus is on execution, consistency, judgment, and giving owners back their time.</p><p>From content and photography to websites and visibility research, we connect the details so your online presence feels cohesive.</p><a class="btn" href="contact.html">Meet us through a conversation</a></div></section></main><footer class="draft-footer">
+</picture><div class="wrap"><div class="eyebrow">Strategy • Content • Visibility</div><h1>A Small-Business Partner</h1><p class="lead">Real people, thoughtful strategy, and consistent execution.</p><div class="actions"><a class="btn" href="visibility-check.html">Explore Visibility Check</a><a class="btn secondary" href="contact.html#contact-form">Contact MKT Visibility</a></div></div></section><section class="section"><div class="wrap panel about-team"><img src="../wolf-theme/assets/mkt-team.webp" width="1080" height="689" loading="lazy" decoding="async" alt="Tim, Michelle, and Kayli together"><div><h2>Why MKT Visibility?</h2><p>We believe small businesses deserve professional digital support without needing a full in-house marketing department. Our focus is on execution, consistency, judgment, and giving owners back their time.</p><p>From content and photography to websites and visibility research, we connect the details so your online presence feels cohesive.</p><a class="btn" href="contact.html#contact-form">Meet us through a conversation</a></div></div></section></main><footer class="draft-footer">
   <div class="wolf-wrap">
     <div class="draft-footer-grid">
       <div>
@@ -43,7 +51,7 @@
         <a href="ai-and-automation.html">AI &amp; Automation</a>
         <a href="blog.html">Blog</a>
         <a href="indexdraft.html#faq">FAQ</a>
-        <a href="contact.html">Contact</a>
+        <a href="contact.html#contact-form">Contact</a>
       </div>
     </div>
     <p class="draft-footer-legal">© 2026 MKT Visibility. Service prices are proposals, subject to final scope confirmation. Advertising spend and third-party costs are separate unless specifically included in a written agreement.</p>
