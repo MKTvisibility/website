@@ -331,3 +331,5 @@
 @media (min-width: 850px) {
   .wolf-home #faq h2 { font-size: min(2rem, 5cqi); white-space: nowrap; }
 }
+
+.wolf-site .wolf-header { box-shadow: 0 5px 13px #051b2940; }
