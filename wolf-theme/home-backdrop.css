@@ -38,13 +38,13 @@
 }
 
 .wolf-home .hero-art {
-  -webkit-mask-image: linear-gradient(#000 78%, transparent);
-  mask-image: linear-gradient(#000 78%, transparent);
+  -webkit-mask-image: linear-gradient(#000 92%, transparent);
+  mask-image: linear-gradient(#000 92%, transparent);
 }
 .wolf-home .hero::after {
   background: linear-gradient(90deg,#f6fbfff5,#f6fbfff0 27%,#f6fbff60 49%,transparent 68%);
-  -webkit-mask-image: linear-gradient(#000 78%, transparent);
-  mask-image: linear-gradient(#000 78%, transparent);
+  -webkit-mask-image: linear-gradient(#000 92%, transparent);
+  mask-image: linear-gradient(#000 92%, transparent);
 }
 .wolf-home .bar { padding-bottom: 19px; }
 
@@ -152,7 +152,7 @@
   isolation: isolate;
   display: grid;
   align-items: center;
-  min-height: clamp(300px, 32vw, 420px);
+  min-height: max(350px, 51vw);
   padding-block: 40px;
   overflow: hidden;
   text-align: left;
@@ -165,8 +165,8 @@
 }
 .draft-hero-art {
   z-index: -1;
-  -webkit-mask-image: linear-gradient(#000 76%, transparent);
-  mask-image: linear-gradient(#000 76%, transparent);
+  -webkit-mask-image: linear-gradient(#000 92%, transparent);
+  mask-image: linear-gradient(#000 92%, transparent);
 }
 .draft-hero-art img { display: block; object-fit: cover; object-position: right 9%; }
 .draft-hero-art::after {
@@ -188,9 +188,16 @@
 .draft-ai-visual .visual-card { max-width: 620px; margin-inline: auto; }
 @media (max-width: 700px) {
   .wolf-site main .draft-hero { display: block; min-height: 0; padding-block: 0 25px; }
-  .draft-hero-art { position: relative; display: block; height: clamp(175px, 52vw, 300px); z-index: auto; }
+  .draft-hero-art { position: relative; display: block; height: clamp(218px, 69vw, 460px); z-index: auto; }
   .draft-hero-art img { object-position: right 32%; }
   .draft-hero-art::after { display: none; }
   .draft-hero > .wrap > :not(.pricing-mobile) { max-width: 100%; }
   .draft-hero h1 { font-size: clamp(2rem, 8vw, 2.65rem); }
+}
+
+@media (min-width: 701px) {
+  .wolf-home .hero { min-height: max(380px, 51vw); }
+}
+@media (max-width: 700px) {
+  .wolf-home .hero-art { height: clamp(218px, 69vw, 460px); }
 }
