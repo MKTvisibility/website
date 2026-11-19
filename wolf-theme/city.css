@@ -12,3 +12,16 @@
 .wolf-city .dark h2 { color: var(--navy); }
 .wolf-city .dark .eyebrow { color: var(--green) !important; }
 .wolf-city .service-art { margin-left: 0; }
+
+.wolf-city .hero .hero-grid {
+  width: min(100%, 1180px);
+  padding-inline: clamp(16px, 5vw, 54px);
+}
+@media (min-width: 701px) {
+  .wolf-city .hero { padding-top: clamp(24px, 4vw, 52px); }
+  .wolf-city .hero-grid { display: block; }
+}
+@media (max-width: 700px) {
+  .wolf-city .hero { padding: 0; }
+  .wolf-city .hero-grid { display: flex; gap: 0; }
+}

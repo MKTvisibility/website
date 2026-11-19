@@ -24,7 +24,7 @@
   mask-image: linear-gradient(transparent, #000 55%);
 }
 
-.wolf-home .hero,
+:is(.wolf-home, .wolf-city) .hero,
 .wolf-home #services,
 .wolf-home #why,
 .wolf-home .good-fit,
@@ -36,11 +36,11 @@
   background: transparent;
 }
 
-.wolf-home .hero-art {
+:is(.wolf-home, .wolf-city) .hero-art {
   -webkit-mask-image: linear-gradient(#000 92%, transparent);
   mask-image: linear-gradient(#000 92%, transparent);
 }
-.wolf-home .hero::after {
+:is(.wolf-home, .wolf-city) .hero::after {
   background: linear-gradient(90deg,#f6fbfff5,#f6fbfff0 27%,#f6fbff60 49%,transparent 68%);
   -webkit-mask-image: linear-gradient(#000 92%, transparent);
   mask-image: linear-gradient(#000 92%, transparent);
@@ -112,7 +112,7 @@
     height: 230px;
     background-size: 1050px auto;
   }
-  .wolf-home .hero-art::after { display: none; }
+  :is(.wolf-home, .wolf-city) .hero-art::after { display: none; }
   .wolf-home #faq {
     --overlook-scene: url("assets/wolf-overlook.webp");
     --overlook-position: right top;
@@ -240,10 +240,10 @@
 }
 
 @media (min-width: 701px) {
-  .wolf-home .hero { min-height: max(380px, 51vw); }
+  :is(.wolf-home, .wolf-city) .hero { min-height: max(380px, 51vw); }
 }
 @media (max-width: 700px) {
-  .wolf-home .hero-art { height: clamp(218px, 69vw, 460px); }
+  :is(.wolf-home, .wolf-city) .hero-art { height: clamp(218px, 69vw, 460px); }
 }
 
 .wolf-home #why .dark,

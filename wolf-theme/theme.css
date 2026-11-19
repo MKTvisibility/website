@@ -88,11 +88,11 @@
 .wolf-home h2 { font-size: clamp(1.65rem, 3.3vw, 2.55rem); margin: 3px 0 9px; font-weight: 850; }
 .wolf-home a { color: inherit; }
 .wolf-home section { padding-block: clamp(24px, 4vw, 52px); }
-.wolf-home .hero { position: relative; isolation: isolate; background: #e5f3fd; overflow: hidden; min-height: clamp(380px, 37vw, 560px); display: grid; align-items: center; }
+:is(.wolf-home, .wolf-city) .hero { position: relative; isolation: isolate; background: #e5f3fd; overflow: hidden; min-height: clamp(380px, 37vw, 560px); display: grid; align-items: center; }
 .hero-art, .hero-art img { position: absolute; inset: 0; width: 100%; height: 100%; }
 .hero-art { z-index: -2; }
 .hero-art img { object-fit: cover; object-position: right 9%; }
-.wolf-home .hero::after {
+:is(.wolf-home, .wolf-city) .hero::after {
   content: "";
   position: absolute;
   z-index: -1;
@@ -184,8 +184,8 @@
 }
 @media (max-width: 700px) {
   .wolf-site .wolf-header nav { min-height: 63px; }
-  .wolf-home .hero { display: block; min-height: 0; padding: 0; }
-  .wolf-home .hero::after { display: none; }
+  :is(.wolf-home, .wolf-city) .hero { display: block; min-height: 0; padding: 0; }
+  :is(.wolf-home, .wolf-city) .hero::after { display: none; }
   .hero-grid { display: flex; flex-direction: column-reverse; }
   .hero-art { position: relative; z-index: auto; display: block; height: clamp(180px, 52vw, 320px); margin-inline: calc(-1 * clamp(16px, 5vw, 54px)); width: auto; }
   .hero-art img { object-position: right 37%; }
