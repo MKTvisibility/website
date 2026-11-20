@@ -341,3 +341,26 @@
 @media (max-width: 700px) {
   .wolf-site { --hero-strip-overlap: 4px; }
 }
+
+
+/* Mobile: soften the abrupt blue ridge edge behind the "What we do" heading.
+   Desktop landscape treatment stays unchanged. */
+@media (max-width: 700px) {
+  .wolf-home #services {
+    position: relative;
+    isolation: isolate;
+    background: transparent;
+  }
+  .wolf-home #services::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    pointer-events: none;
+    inset: 0 0 auto;
+    height: clamp(260px, 90vw, 430px);
+    background: url("assets/ridges.webp") center top / 100% auto no-repeat;
+    opacity: .58;
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 28%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 0%, #000 28%, transparent 100%);
+  }
+}
